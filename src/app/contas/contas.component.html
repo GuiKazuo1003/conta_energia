@@ -1,0 +1,60 @@
+<h1 class="nav justify-content-center text-bg-warning p-3">Simulador de conta de luz </h1>
+<div class="container">
+    <div class="form-group mx-auto text-center text-bg-dark p-3">
+        <div class="form-row">
+          <div class="col-2 mx-auto text-center">
+            <label for="numPessoas">Número de pessoas:</label>
+            <input type="number" class="form-control" id="numPessoas" [(ngModel)]="numPessoas" min="1">
+          </div>
+          <div class="col-2 mx-auto text-center">
+            <label for="numComodos">Quantidade de cômodos:</label>
+            <input type="number" class="form-control" id="numComodos" [(ngModel)]="numComodos" min="1">
+          </div>
+        </div>
+      
+        <div class="form-row">
+            <div class="col text-bg-dark p-3">
+                <label class="mt-4">Tem maquina de lavar?</label>
+                <input [(ngModel)]="MaqLavar" name="MaqLavar" type="radio" value="true">Sim
+                <input [(ngModel)]="MaqLavar" name="MaqLavar" type="radio" value="false">Não
+                <br>
+                <label>Tem secadora de roupas?</label>
+                <input [(ngModel)]="Secadora" name="Secadora" type="radio" value="true">Sim
+                <input [(ngModel)]="Secadora" name="Secadora" type="radio" value="false">Não
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col text-bg-dark p-3">
+                <label class="mt-4">Quantidades de TVs?</label>
+                <input class="border-color border-radius" type="number" [(ngModel)]="numTV" min="0">
+                <br>
+                <label class="mt-4">Quantidades de PCs?</label>
+                <input class="border-radius border-color" type="number" [(ngModel)]="numPC" min="0">
+                <br>
+                <br>
+                <div class="text-bg-dark p-3">
+                    <input class="border-color mb-3" type="number" [(ngModel)]="numKW" readonly>KW
+                    <input class="border-color mb-3" type="number" [(ngModel)]="numConta" readonly>R$
+                    <br>
+                    <button class="btn btn-primary" (click)="calcKW()">Calcular</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button class="btn btn-primary" type="button" (click)="toggleCollapse()">
+    Sobre as contas utilizadas
+  </button>
+  
+  <div class="collapse" [ngbCollapse]="isCollapsed" id="collapseExample">
+    <div class="card card-body">
+      Como é muito aberto e não muito especifico, os resultados podem não ser completamente precisos,
+      isso leva ao fato de diversos fatores, os cômodos por exemplo, só é especificado a quantidade,
+      e a variabilidade de gastos conforme cada cômodo é diferente um do outro, sendo assim foi necessario um numero (KWs) para
+      todos os cômodos, a mesma coisa com a TV que dependendo do modelo varia o seu gasto, por isso foi utilizado
+      valores com o que se assemelham com a vida real.
+    </div>
+  </div>
+  
+
+ 
