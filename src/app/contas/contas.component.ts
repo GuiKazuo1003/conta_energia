@@ -15,6 +15,8 @@ export class ContasComponent {
     numKW : number ;
     numConta : number ;
     numChuveiro : number ;
+    numTarifa : number ;
+    Tarifa : number = 0.65;
 
     MaqLavar : string;
     Secadora : string;
@@ -53,6 +55,7 @@ export class ContasComponent {
       const tempNumTV = this.numTV;
       const numPessoas = this.numPessoas;
       const numChuveiro = this.numChuveiro;
+      const Tarifa = this.numTarifa;
       const temMaqLavar = this.MaqLavar === 'true' ? 10 : 0;
       const temSecadora = this.Secadora === 'true' ? 15 : 0;
 
@@ -74,7 +77,7 @@ export class ContasComponent {
       
       this.numKW = numPC + numTV + numComodos + ((temMaqLavar + temSecadora) * numPessoas) + numChuveiro;
 
-      this.numConta = this.numKW * 0.75; //mais ou menos o valor de 1 KWs
+      this.numConta = this.numKW * this.Tarifa;
       this.numConta = parseFloat(this.numConta.toFixed(2));
     }
 }

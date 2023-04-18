@@ -1,0 +1,4 @@
+.tarifa input::placeholder {
+    color: #999;
+    font-style: italic;
+  }

@@ -32,9 +32,13 @@
                 <input class="border-radius border-color" type="number" [(ngModel)]="numPC" min="0">
                 <br>
                 <br>
+                <div class="col-2 mx-auto text-center">
+                    <label for="numComodos">Valor da Tarifa:</label>
+                    <input type="number" class="form-control" id="Tarifa" [(ngModel)]="Tarifa" min="0.50" >
+                </div>
                 <div class="text-bg-dark p-3">
-                    <input class="border-color mb-3" type="number" [(ngModel)]="numKW" readonly>KW
-                    <input class="border-color mb-3" type="number" [(ngModel)]="numConta" readonly>R$
+                    <input class="border-color mb-3" type="number" [(ngModel)]="numKW" readonly placeholder="Valor em KW">KW
+                    <input class="border-color mb-3" type="number" [(ngModel)]="numConta" readonly placeholder="Valor da conta">R$
                     <br>
                     <button class="btn btn-primary" (click)="calcKW()">Calcular</button>
                 </div>
