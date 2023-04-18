@@ -14,7 +14,7 @@ export class ContasComponent {
     numPC : number ;
     numKW : number ;
     numConta : number ;
-    numChuveiro : number;
+    numChuveiro : number ;
 
     MaqLavar : string;
     Secadora : string;
